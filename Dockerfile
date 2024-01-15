@@ -11,9 +11,9 @@ RUN pip install paho-mqtt requests
 COPY . /app
 
 # Definiere Umgebungsvariablen (ersetze mit deinen eigenen Werten)
-ENV MQTT_BROKER_ADDRESS "mqtt.eclipse.org"
-ENV MQTT_TOPIC "dein/topic"
-ENV OPENAI_API_KEY "DEIN_OPENAI_API_KEY"
+ENV MQTT_BROKER_ADDRESS $MQTT_BROKER_ADDRESS 
+ENV MQTT_TOPIC $MQTT_TOPIC
+ENV OPENAI_API_KEY $OPENAI_API_KEY
 
 # Starte den Proxy beim Start des Containers
 CMD ["python", "proxy_script.py"]
